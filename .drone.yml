@@ -12,7 +12,7 @@ steps:
     - 'echo " Done " | bash'
   settings:
     # registry: docker.io
-    repo: r000tz/hello-jd
+    repo: r000tz/hello-jd-poc
     username:
       from_secret: docker_username
     password:
